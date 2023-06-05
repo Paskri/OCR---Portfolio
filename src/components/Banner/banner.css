@@ -1,0 +1,33 @@
+.rain-container {
+  position: relative;
+  margin: 0 auto;
+  background: #070a11;
+  width: 100%;
+  height: 400px;
+}
+.banner-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  color: #a0cdff;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+#canvas2 {
+  z-index: 0;
+  filter: blur(1px);
+}
+.rain-container {
+  position: relative;
+}
+
+.typewriter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

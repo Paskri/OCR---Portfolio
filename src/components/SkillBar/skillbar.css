@@ -1,0 +1,49 @@
+.skill-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.skill-logo {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  margin: 5px 15px 5px 5px;
+}
+.skill-name {
+  flex: none;
+  width: 110px;
+}
+.skill-bar-back {
+  width: 500px;
+  height: 18px;
+  background-color: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-bar-progress {
+  width: 0;
+  height: 100%;
+  color: white;
+  text-align: right;
+
+  transition: width 1s ease-out;
+  padding-bottom: 3px;
+  line-height: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .skill-logo {
+    width: 45px;
+    height: 45px;
+  }
+  .skill-bar-back {
+    height: 24px;
+  }
+  .skill-bar-progress {
+    line-height: inherit;
+  }
+}
