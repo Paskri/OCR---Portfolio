@@ -3,8 +3,10 @@ import gitwhite from '../../assets/social-icons/git-white.webp'
 import gitblack from '../../assets/social-icons/git-black.webp'
 import inwhite from '../../assets/social-icons/linkedin-white.webp'
 import inblack from '../../assets/social-icons/linkedin-black.webp'
-import ayawhite from '../../assets/social-icons/aya-white.webp'
-import ayablack from '../../assets/social-icons/aya-black.webp'
+//import ayawhite from '../../assets/social-icons/aya-white.webp'
+//import ayablack from '../../assets/social-icons/aya-black.webp'
+import indeedwhite from '../../assets/social-icons/indeed-white.webp'
+import indeedblack from '../../assets/social-icons/indeed-black.webp'
 import './about.css'
 import moi from '../../assets/moi.jpg'
 import Scramble from '../Scramble'
@@ -20,11 +22,15 @@ export default function About() {
     default: inwhite,
     hover: inblack,
   }
+  const indeedImage = {
+    default: indeedwhite,
+    hover: indeedblack,
+  }
 
-  const ayaImage = {
+  /*const ayaImage = {
     default: ayawhite,
     hover: ayablack,
-  }
+  }*/
   return (
     <>
       <section id="about" className="about">
@@ -55,7 +61,10 @@ export default function About() {
               link="https://www.linkedin.com/in/pascal-krieg-153497136/"
               image={linkedinImage}
             />
-            <SocialLink link="https://arthur-yann.fr/" image={ayaImage} />
+            <SocialLink
+              link="https://profile.indeed.com/p/pascalk-71xs2nk"
+              image={indeedImage}
+            />
           </div>
         </div>
         <div className="about-right reveal-left">

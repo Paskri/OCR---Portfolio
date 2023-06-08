@@ -177,7 +177,7 @@
     ],
     "comments": [
       "Avec ce projet, nous voilà arrivés dans le développement d'une API complète. L'acquisition des compétences associées est venue compléter le travail réalisé précédemment sur React et m'a donnera la possibilité de coder un site de A à Z en Javascript et adoptant une solution MERN (MongoDB, Express, React, Node)",
-      "Pour cela il m'a été nécessaire d'être méthodique et précis dans mon approche. Rien ne doit être laissé au hasard afin de garantir la sécurisation des données et des routes sur lesquelles s'échangent les données. En effet, la réglementation impose le respect de normes strictes pour protéger les données utilisateur qui doivent impérativement rester confidentielles sans parler des autres dégâts potentiels que peuvent engendrer les intrusions.",
+      "Pour cela il m'a été nécessaire d'être méthodique et précis dans mon approche. Rien ne doit être laissé au hasard afin de garantir la sécurisation des données et des routes sur lesquelles elles transitent. En effet, la réglementation impose le respect de normes strictes pour protéger les données utilisateur qui doivent impérativement rester confidentielles sans parler des autres dégâts potentiels que peuvent engendrer les intrusions.",
       "Parmi les quelques difficultés rencontrées, je citerais la syntaxe assez particulière propre à Node et Express que la pratique et la répétition m'ont permis d'intégrer."
     ],
     "code": "https://github.com/Paskri/OCR---MonVieuxGrimoire",

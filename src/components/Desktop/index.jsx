@@ -43,7 +43,7 @@ export default function Mobile(props) {
             <div className="desktop-keyboard"></div>
           </div>
           {datas.length <= 1 ? (
-            ''
+            <div className="desktop-nav"></div>
           ) : (
             <div className="desktop-nav">
               <button className="nav-back" onClick={handleBack}>

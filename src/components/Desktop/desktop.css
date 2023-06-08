@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 50%;
+  min-height: 42px;
   margin: 0 auto 10px auto;
 }
 .desktop-frame {
