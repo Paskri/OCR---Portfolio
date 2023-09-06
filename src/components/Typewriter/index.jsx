@@ -21,7 +21,7 @@ export default function Typewriter(props) {
 
   // animate typing
   useEffect(() => {
-    const newDelay = Math.random() * 200
+    const newDelay = Math.random() * 100
 
     const interval = setInterval(() => {
       if (index === fullText.length) {

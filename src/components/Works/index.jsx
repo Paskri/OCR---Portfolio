@@ -10,8 +10,8 @@ export default function Works() {
     data: works,
     loading,
     error,
-  } = useFetch('http://localhost:3000/works.json')
-
+  } = useFetch('https://api.krieg.fr/api/works')
+  const reversedWorks = loading ? null : works.slice().reverse()
   return (
     <section id="works" className="works">
       <div className="reveal-up">
@@ -21,11 +21,10 @@ export default function Works() {
       </div>
 
       {loading ? <Loader /> : ''}
-      {error ? 'Oups, il y a eu une erreur' : ''}
       <div className="works-container">
         {loading
           ? ''
-          : works.map((work, index) => (
+          : reversedWorks.map((work, index) => (
               <Work
                 key={`work-${work.id}`}
                 loading={loading}
@@ -34,6 +33,13 @@ export default function Works() {
               />
             ))}
       </div>
+      {error ? (
+        <div className="error-container">
+          Oups, une erreur s'est produite lors du chargement des données
+        </div>
+      ) : (
+        ''
+      )}
     </section>
   )
 }

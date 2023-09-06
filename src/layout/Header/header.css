@@ -89,12 +89,12 @@ nav a:visited {
 }
 .reveal-left [class*='reveal-'] {
   opacity: 0.01 !important;
-  transform: translateX(100%) !important;
+  transform: translateX(50px) !important;
   transition: 0s !important;
 }
 .reveal-right [class*='reveal-'] {
   opacity: 0.01 !important;
-  transform: translateX(-100%) !important;
+  transform: translateX(-50px) !important;
   transition: 0s !important;
 }
 
@@ -132,7 +132,7 @@ nav a:visited {
     transition-delay: 0s !important;
   }
 }*/
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 610px) {
   header {
     flex-direction: row;
     align-items: center;

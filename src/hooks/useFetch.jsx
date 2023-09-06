@@ -8,7 +8,11 @@ export default function useFetch(url) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(url)
+        const response = await fetch(url, {
+          headers: {
+            //'Access-Control-Allow-Private-Network': 'true',
+          },
+        })
         const datas = await response.json()
         setData(datas)
       } catch (error) {
@@ -18,6 +22,5 @@ export default function useFetch(url) {
     }
     fetchData()
   }, [url])
-
   return { data, loading, error }
 }

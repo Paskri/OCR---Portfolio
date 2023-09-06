@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './style/header.css'
-import logo from './img/logo-pk.webp'
+import './header.css'
+import logo from '../../assets/logo-pk.webp'
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState('')

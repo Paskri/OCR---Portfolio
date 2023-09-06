@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './social-link.css'
 
 const SocialLink = (props) => {
-  const { link, image } = props
+  const { link, image, name } = props
   /// ajouter une propriété dark pour le footer et inverser les images/couleurs
   const [hoverImage, setHoverImage] = React.useState(false)
   const onMouseEnter = () => setHoverImage(true)
@@ -19,7 +19,7 @@ const SocialLink = (props) => {
       onMouseLeave={onMouseLeave}
       target="about:blank"
     >
-      <img src={imageSrc} alt="" />
+      <img src={imageSrc} alt={`${name} logo`} width="65" height="65" />
     </a>
   )
 }

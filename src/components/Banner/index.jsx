@@ -1,5 +1,6 @@
 import Typewriter from '../Typewriter'
 import RainFx from '../RainFx'
+//import RainFxOld from '../RainFxOld'
 import './banner.css'
 // ds rainFx canvasWidth={1440} canvasHeight={400}
 export default function Banner() {

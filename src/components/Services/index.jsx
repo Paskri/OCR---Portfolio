@@ -15,7 +15,7 @@ export default function Services() {
           <div className="service-container reveal-2">
             <div className="service-content">
               <div className="title green">
-                <h3>Developpement Backend</h3>
+                <h3>Création de site</h3>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@ export default function Services() {
           <div className="service-container reveal-3">
             <div className="service-content">
               <div className="title orange">
-                <h3>Developpement Frontend</h3>
+                <h3>Optimisation</h3>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Services() {
           <div className="service-container reveal-4">
             <div className="service-content">
               <div className="title blue">
-                <h3>Composition & arrangement</h3>
+                <h3>Composition / Arrangement</h3>
               </div>
             </div>
           </div>

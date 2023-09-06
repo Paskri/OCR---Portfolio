@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ReactModal from 'react-modal'
 
-import RainFx from '../RainFx'
-import Typewriter from '../Typewriter'
+//import RainFx from '../RainFx'
+//import Typewriter from '../Typewriter'
 import Mobile from '../Mobile'
 import Desktop from '../Desktop'
 import Tags from '../Tags'
@@ -11,7 +11,7 @@ import SocialLink from '../SocialLink'
 import './work.css'
 import gitwhite from '../../assets/social-icons/git-white.webp'
 import gitblack from '../../assets/social-icons/git-black.webp'
-
+import rain from '../../assets/rain.webp'
 //react-modal custom style
 const customStyle = {
   overlay: {
@@ -43,6 +43,7 @@ const customStyle = {
     padding: '20px',
   },
 }
+ReactModal.setAppElement('#root')
 
 export default function Work(props) {
   const { work, index, loading } = props
@@ -54,6 +55,7 @@ export default function Work(props) {
   const [animate, setAnimate] = useState('')
   const [reveal, setReveal] = useState('')
   const divAnimate = useRef(null)
+  const [loaded, setLoaded] = useState(false)
 
   //toggle background filter
   function handleMouseEnter(event) {
@@ -101,37 +103,42 @@ export default function Work(props) {
       setAnimate('reveal-left')
       setReveal('reveal-3')
     }
+    setLoaded(true)
   }, [animate, reveal, setAnimate, setReveal, index])
 
   useEffect(() => {
-    const ratio = 0.1
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: ratio,
-    }
-    const handleIntersect = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          divAnimate.current.classList.add('reveal-loaded')
-          divAnimate.current.classList.remove(
-            'reveal-up',
-            'reveal-left',
-            'reveal-right'
-          )
-          observer.unobserve(entry.target)
-        }
-      })
-    }
+    if (loaded) {
+      const ratio = 0.1
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: ratio,
+      }
+      const handleIntersect = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            divAnimate.current.classList.add('reveal-loaded')
+            divAnimate.current.classList.remove(
+              'reveal-up',
+              'reveal-left',
+              'reveal-right'
+            )
+            observer.unobserve(entry.target)
+          }
+        })
+      }
 
-    const observer = new IntersectionObserver(handleIntersect, options)
-    observer.observe(divAnimate.current)
+      const observer = new IntersectionObserver(handleIntersect, options)
+      observer.observe(divAnimate.current)
 
-    return () => {
-      observer.disconnect()
+      return () => {
+        observer.disconnect()
+      }
     }
-  }, [divAnimate])
+  }, [divAnimate, loaded])
   //canvasWidth={420} canvasHeight={278}
+  // just after tags <RainFx />
+  // knowmore <Typewriter fullText="En savoir plus ->" />
   return (
     <>
       {loading ? (
@@ -150,17 +157,21 @@ export default function Work(props) {
                 className="work-logo"
                 src={`../img/${work.logo}.webp`}
                 alt={`${work.title} logo`}
+                width={work.logoSize[0]}
+                height={work.logoSize[1]}
               />
               <div className="tags">{work.tags}</div>
             </div>
-            <RainFx />
+            <div className="rain-container">
+              <img src={rain} alt="rain" width="420" height="278" />
+            </div>
             <div
               onClick={toggleModal}
               className="typewriter-container"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Typewriter fullText="En savoir plus ->" />
+              <p className="typewriter">En savoir plus ...</p>
             </div>
             <ReactModal
               isOpen={isOpen}
@@ -202,11 +213,16 @@ export default function Work(props) {
                     ))}
                     <Tags tags={work.keywords} />
                   </div>
+
                   <div className="modal-middle-right">
-                    <div className="git-container">
-                      <p>Consulter le code :</p>
-                      <SocialLink link={work.code} image={gitImage} />
-                    </div>
+                    {work.code ? (
+                      <div className="git-container">
+                        <p>Consulter le code :</p>
+                        <SocialLink link={work.code} image={gitImage} />
+                      </div>
+                    ) : (
+                      ''
+                    )}
 
                     {work.demo ? (
                       <div className="demo-container">

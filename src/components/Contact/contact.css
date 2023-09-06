@@ -5,6 +5,8 @@ form {
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 100px;
+  color: black;
+  background-color: white;
 }
 button {
   display: block;
@@ -18,6 +20,12 @@ textarea {
   width: 100%;
   height: 300px;
 }
+::placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+  color: #575757;
+  opacity: 1;
+}
 .c-yup {
   color: tomato;
   text-align: center;
@@ -29,4 +37,7 @@ textarea {
 .success {
   color: green;
   text-align: center;
+}
+.label {
+  display: block;
 }

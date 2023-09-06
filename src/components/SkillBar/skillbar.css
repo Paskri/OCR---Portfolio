@@ -14,9 +14,13 @@
   height: 30px;
   margin: 5px 15px 5px 5px;
 }
+.skill-logo img {
+  width: 30px;
+  height: 30px;
+}
 .skill-name {
   flex: none;
-  width: 110px;
+  width: 75px;
 }
 .skill-bar-back {
   width: 500px;
@@ -35,8 +39,15 @@
   padding-bottom: 3px;
   line-height: 1rem;
 }
+.percent {
+  margin-left: 10px;
+}
 @media screen and (min-width: 600px) {
-  .skill-logo {
+  .skill-name {
+    width: 95px;
+  }
+  .skill-logo,
+  .skill-logo img {
     width: 45px;
     height: 45px;
   }

@@ -35,7 +35,9 @@
 }
 .about-right img {
   object-fit: cover;
-  height: 375px;
+  height: 100%;
+  width: auto;
+  margin-bottom: 15px;
 }
 
 .about-footer {

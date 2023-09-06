@@ -8,7 +8,7 @@ import inblack from '../../assets/social-icons/linkedin-black.webp'
 import indeedwhite from '../../assets/social-icons/indeed-white.webp'
 import indeedblack from '../../assets/social-icons/indeed-black.webp'
 import './about.css'
-import moi from '../../assets/moi.jpg'
+import moi from '../../assets/moi.webp'
 import Scramble from '../Scramble'
 import SocialLink from '../SocialLink'
 
@@ -56,19 +56,31 @@ export default function About() {
             précision du code à la subtilité d'une création artistique.
           </p>
           <div className="about-footer reveal-3">
-            <SocialLink link="https://github.com/Paskri" image={gitImage} />
+            <SocialLink
+              link="https://github.com/Paskri"
+              image={gitImage}
+              name="Github"
+            />
             <SocialLink
               link="https://www.linkedin.com/in/pascal-krieg-153497136/"
               image={linkedinImage}
+              name="LinkedIn"
             />
             <SocialLink
               link="https://profile.indeed.com/p/pascalk-71xs2nk"
               image={indeedImage}
+              name="Indeed"
             />
           </div>
         </div>
         <div className="about-right reveal-left">
-          <img className="reveal-6" src={moi} alt="Pascal Krieg posing" />
+          <img
+            className="reveal-6"
+            src={moi}
+            width="331px"
+            height="375px"
+            alt="Pascal Krieg posing"
+          />
         </div>
       </section>
     </>

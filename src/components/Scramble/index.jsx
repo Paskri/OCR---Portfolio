@@ -39,7 +39,7 @@ const Scramble = ({ text }) => {
   useEffect(() => {
     let indexTimer = 0
     if (isScrolling) {
-      const timeValue = Math.round(Math.random() * 100) + 50
+      const timeValue = 50 //Math.round(Math.random() * 100) + 50
       indexTimer = setTimeout(() => {
         setCurrentIndex(currentIndex + 1)
       }, timeValue)
@@ -55,9 +55,10 @@ const Scramble = ({ text }) => {
     if (inView) {
       viewTimer = setTimeout(() => {
         setIsScrolling(true)
-      }, 500)
+      }, 300)
     } else {
-      setCurrentIndex(0)
+      // restart scrambled when hidden
+      //setCurrentIndex(0)
       setIsScrolling(false)
     }
     return () => {

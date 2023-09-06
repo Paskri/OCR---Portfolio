@@ -58,45 +58,52 @@ export default function Contact(user, validate) {
         <Scramble text="Contact" className="reveal-0" />
       </h2>
       {successMessage && <p className="success">{successMessage}</p>}
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="contact-form reveal-up"
-      >
-        <label htmlFor="name" className="reveal-1">
-          <p>Nom</p>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Nom et prénom"
-            {...register('name')}
-          />
+      <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+        <label htmlFor="name" className="reveal-up">
+          <div className="reveal-1">
+            <p>Nom</p>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nom et prénom"
+              autoComplete="on"
+              {...register('name')}
+            />
+          </div>
         </label>
         {errors.name && <p className="c-yup">{errors.name.message}</p>}
-        <label htmlFor="email" className="reveal-2">
-          <p>Email</p>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Votre@email.com"
-            {...register('email')}
-          />
+        <label htmlFor="email" className="reveal-up">
+          <div className="reveal-2">
+            <p>Email</p>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre@email.com"
+              autoComplete="on"
+              {...register('email')}
+            />
+          </div>
         </label>
         {errors.email && <p className="c-yup">{errors.email.message}</p>}
-        <label htmlFor="message" className="reveal-3">
-          <p>Message</p>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Votre message"
-            {...register('message')}
-          />
+        <label htmlFor="message" className="reveal-up">
+          <div className="reveal-3">
+            <p>Message</p>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Votre message"
+              {...register('message')}
+            />
+          </div>
         </label>
         {errors.message && <p className="c-yup">{errors.message.message}</p>}
-        <button type="submit" className="reveal-4">
-          Envoyer
-        </button>
+        <div className="reveal-up">
+          <button type="submit" className="reveal-4">
+            Envoyer
+          </button>
+        </div>
       </form>
     </section>
   )
